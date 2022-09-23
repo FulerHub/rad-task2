@@ -88,7 +88,7 @@ const notesSlice = createSlice({
             }: item);
         },
         updateNote(state,action){
-            const {id,name,category,content,isArchive} = action.payload;
+            const {id,name,category,content} = action.payload;
             state.notes = state.notes.map(item=>(item.id === id) ? {
                 ...item,
                 name,
