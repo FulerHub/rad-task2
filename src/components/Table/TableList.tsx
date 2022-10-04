@@ -19,16 +19,16 @@ interface ITableList {
 
 const TableList:FC<ITableList> = ({columns,dataSource,control, handleEdit = ()=>{}, handleArchive= ()=>{}, handleDelete= ()=>{}}) => {
     return (
-        <div className="table">
+        <div className="table w-full border-spacing-y-3 text-white">
             {columns &&
-                <div className={"table__header table__tr"}>
+                <div className="table-row my-4">
                     {columns.map((item,index)=>{
-                       return <div className={"table__th"} key={index}>{item}</div>
+                       return <div className={"table-cell bg-gray-700 py-3"} key={index}>{item}</div>
                     })}
                     {control &&
-                        <div className="table__th table__bar">
-                            <i className="fa fa-archive" aria-hidden="true"/>
-                            <i className="fa fa-trash" aria-hidden="true"/>
+                        <div className="table-cell bg-gray-700 py-3 text-2xl text-right">
+                            <i className="fa fa-archive mx-1.5" aria-hidden="true"/>
+                            <i className="fa fa-trash mx-1.5" aria-hidden="true"/>
                         </div>
                     }
                 </div>

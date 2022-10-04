@@ -63,18 +63,18 @@ const Home:FC = () => {
                     content: "",
                 }} onSubmit={handleCreateNote}>
                     {({values, handleChange, handleBlur, handleSubmit}) => (
-                        <form className={"table__tr"} onSubmit={handleSubmit}>
-                            <Input name={"name"} type={"text"} placeholder={"Name"} onChange={handleChange} onBlur={handleBlur} value={values.name} />
-                            <Select name={"category"} defaultValue={values.category} onChange={handleChange} values={categories}/>
-                            <Input name={"content"} type={"text"} placeholder={"Content"} onChange={handleChange} onBlur={handleBlur} value={values.content} />
-                            <button type={"submit"} className={'button'}>Create Note</button>
+                        <form className={""} onSubmit={handleSubmit}>
+                            <Input className={'border border-black w-full py-2 px-3 my-1'} name={"name"} type={"text"} placeholder={"Name"} onChange={handleChange} onBlur={handleBlur} value={values.name} />
+                            <Select  name={"category"} defaultValue={values.category} onChange={handleChange} values={categories}/>
+                            <Input className={'border border-black w-full py-2 px-3 my-1'} name={"content"} type={"text"} placeholder={"Content"} onChange={handleChange} onBlur={handleBlur} value={values.content} />
+                            <button type={"submit"} className={'px-5 py-2.5 text-white bg-gray-800 rounded-md duration-150 hover:bg-gray-700 active:shadow-lg'}>Create Note</button>
                         </form>
                     )}
                 </Formik>
 
             </Modal>
             <TableList columns={columns} dataSource={newNotes} control={true} handleEdit={handleEditNote} handleArchive={handleArchiveNote} handleDelete={handleDeleteNote}/>
-            <button onClick={()=>setModal(true)} className={'button'}>Create Note</button>
+            <button onClick={()=>setModal(true)} className={'px-5 py-2.5 text-white bg-gray-800 rounded-md duration-150 hover:bg-gray-700 active:shadow-lg'}>Create Note</button>
             <TableList columns={columnsCategories} dataSource={newCategories}/>
         </div>
     );

@@ -39,11 +39,11 @@ const TableItem:FC<ITableItem> = ({ id, data, controls, active=false, handleEdit
             {edit ?
                 <Formik initialValues={newData} onSubmit={(values) => handleEdit(id,values)}>
                 {({values, handleChange, handleBlur, handleSubmit}) => (
-                    <form className={"table__tr"} onSubmit={handleSubmit}>
+                    <form className={"table-row my-3 p-3"} onSubmit={handleSubmit}>
                         {
                             data.length > 0 &&
                             data.map((item,index)=>
-                                <div key={index} className={"table__td"}>
+                                <div key={index} className={"table-cell align-middle bg-gray-200 p-2 text-gray-700"}>
                                 {!item.edit ? item.value :
                                     (item.type === "select") ?
                                         <Select name={item.name} defaultValue={values[item.name]} onChange={handleChange} values={item.selectValues as string[]}/>
@@ -56,8 +56,8 @@ const TableItem:FC<ITableItem> = ({ id, data, controls, active=false, handleEdit
                 )}
                 </Formik>
                 :
-                <div className={`table__tr ${active ? "archive" : ""}`}>
-                    {data.length > 0 && data.map((item,index)=><div key={index} className={"table__td"}>{item.value}</div>)}
+                <div className={`table-row my-3 ${active ? "opacity-70" : ""}`}>
+                    {data.length > 0 && data.map((item,index)=><div key={index} className={"table-cell align-middle bg-gray-200 p-2 text-gray-700"}>{item.value}</div>)}
                     {controls && <TableItemControls handleEdit={()=>handleEditEx()} handleArchive={()=>handleArchive(id)} handleDelete={()=>handleDelete(id)} />}
                 </div>
             }

@@ -12,7 +12,7 @@ interface InputProps {
 const Input:FC<InputProps> = ({name,className,type,placeholder,value,message,onChange,onBlur}) => {
     return (
         <>
-            <input name={name} className={className ? className :"input"} type={type} placeholder={placeholder} onChange={onChange} onBlur={onBlur} value={value}/>
+            <input name={name} className={className ? className :"w-full py-2 border border-black"} type={type} placeholder={placeholder} onChange={onChange} onBlur={onBlur} value={value}/>
             <p style={{color:"#ff0000"}}>{message}</p>
         </>
     );
