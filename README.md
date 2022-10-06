@@ -1,3 +1,7 @@
+[https://radency.river-fuler.ru/task2/](https://radency.river-fuler.ru/task2/)
+[https://radency.river-fuler.ru/task2/tailwind](https://radency.river-fuler.ru/task2/tailwind)
+[https://radency.river-fuler.ru/task2/storybook](https://radency.river-fuler.ru/task2/storybook)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
