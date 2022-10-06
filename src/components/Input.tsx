@@ -4,7 +4,7 @@ interface InputProps {
     name: string;
     type: "text" | "password" | "email";
     placeholder: string;
-    message?: string | undefined | false | any;
+    message?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
     value?: string
@@ -13,7 +13,7 @@ const Input:FC<InputProps> = ({name,className,type,placeholder,value,message,onC
     return (
         <>
             <input name={name} className={className ? className :"w-full py-2 border border-black"} type={type} placeholder={placeholder} onChange={onChange} onBlur={onBlur} value={value}/>
-            <p style={{color:"#ff0000"}}>{message}</p>
+            {message && <p style={{color:"#ff0000"}}>{message}</p>}
         </>
     );
 };
