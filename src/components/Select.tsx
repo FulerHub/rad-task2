@@ -10,7 +10,7 @@ interface ISelect {
 const Select:FC<ISelect> = ({name, defaultValue, onChange, values}) => {
     return (
         <div>
-            <select className={'select'} name={name} value={defaultValue} onChange={onChange}>
+            <select className={'w-full py-2 border border-black'} name={name} value={defaultValue} onChange={onChange}>
                 {values &&
                 values.map((item,index)=>
                     <option key={index} value={item}>{item}</option>)
